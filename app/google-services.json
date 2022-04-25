@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "457219662857",
+    "firebase_url": "https://phone-fridge-default-rtdb.firebaseio.com",
+    "project_id": "phone-fridge",
+    "storage_bucket": "phone-fridge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457219662857:android:e896692ede67bf1559c4d8",
+        "android_client_info": {
+          "package_name": "com.example.FridgeontheGo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457219662857-355gvf04n09pl5kn5e1um25b3mo6vr2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNT7dWn75WulZZIb73TLNvQ8kKqt6dIgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457219662857-355gvf04n09pl5kn5e1um25b3mo6vr2a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457219662857:android:4e907565ace6904e59c4d8",
+        "android_client_info": {
+          "package_name": "com.example.phonefridge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457219662857-355gvf04n09pl5kn5e1um25b3mo6vr2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNT7dWn75WulZZIb73TLNvQ8kKqt6dIgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457219662857-355gvf04n09pl5kn5e1um25b3mo6vr2a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
