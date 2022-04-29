@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MoreFragment extends Fragment {
@@ -20,7 +21,6 @@ public class MoreFragment extends Fragment {
     EditText edit_quantity;
     Button btnEnter;
 
-  DatabaseReference itemDbRef;
 
 
     @Override
@@ -36,6 +36,7 @@ public class MoreFragment extends Fragment {
         btnEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
+
                 insertItemData();
             }
         });
@@ -48,7 +49,8 @@ public class MoreFragment extends Fragment {
         String quantity = edit_quantity.getText().toString();
 
         Item item = new Item(name, quantity);
-
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference itemDbRef= database.getReference("freezer");
         itemDbRef.push().setValue(item);
 
         Toast.makeText(MoreFragment.this.getActivity(),"Item entered!",Toast.LENGTH_SHORT).show();
