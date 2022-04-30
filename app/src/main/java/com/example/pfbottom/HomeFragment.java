@@ -47,6 +47,7 @@ public class HomeFragment extends Fragment {
 // open freezer page
     private void openFreezer() {
         Intent i = new Intent(HomeFragment.this.getActivity(), Freezer.class);
+        //Intent i = new Intent(getContext(), Freezer.class);
         //Intent i = new Intent(getActivity(), Freezer.class);
       startActivity(i);
     }

@@ -17,7 +17,8 @@
             android:exported="false" />
         <activity
             android:name=".Fridge"
-            android:exported="false" /> <!-- splash -->
+            android:exported="false" />
+        <!-- splash -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
