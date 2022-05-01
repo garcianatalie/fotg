@@ -13,7 +13,8 @@ import android.widget.Button;
 
 public class HomeFragment extends Fragment {
 
-    Button btnEnterFreezer;
+    Button btnEnterFreezer, btnEnterFridge;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -21,14 +22,22 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        Intent i = new Intent(getActivity(), AddFreezer.class);
+
         btnEnterFreezer = view.findViewById(R.id.btnEnterFreezer);
+        btnEnterFridge = view.findViewById(R.id.btnEnterFridge);
 
         btnEnterFreezer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //  openFreezer();
-                startActivity(i);
+                Intent intent = new Intent(getContext(), InsideFreezer.class);
+                startActivity(intent);
+            }
+        });
+        btnEnterFridge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), InsideFridge.class);
+                startActivity(intent);
             }
         });
         return view;

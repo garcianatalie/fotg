@@ -11,9 +11,10 @@
         <entry key="app/src/main/res/drawable/ic_more.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/icon.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.2085" />
-        <entry key="app/src/main/res/layout/activity_freezer.xml" value="0.22395833333333334" />
+        <entry key="app/src/main/res/layout/activity_freezer.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_fridge.xml" value="0.18614130434782608" />
         <entry key="app/src/main/res/layout/activity_inside_freezer.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_inside_fridge.xml" value="0.16576086956521738" />
         <entry key="app/src/main/res/layout/activity_item_selected.xml" value="0.18614130434782608" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />

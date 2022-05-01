@@ -7,7 +7,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#f8f8f8">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,14 +21,28 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
+                <TextView
+                    android:id="@+id/addFreezerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+
+                    android:textSize="35sp"
+                    android:text="add item to freezer"
+                    />
 
                 <EditText
                     android:id="@+id/edit_text_file_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="40dp"
+
                     android:ems="10"
                     android:hint="item name" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -36,7 +51,6 @@
                 android:layout_weight="1"
                 android:gravity="top|center_horizontal"
                 android:orientation="vertical">
-
                 <EditText
                     android:id="@+id/edit_quantity"
                     android:layout_width="wrap_content"
@@ -45,6 +59,21 @@
                     android:ems="10"
                     android:hint="quantity"
                     android:inputType="phone" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expiration Date:"
+                    android:textSize="15sp"
+                    android:layout_marginTop="20dp"/>
+                <EditText
+                    android:id="@+id/edit_expDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="00/00/0000"
+                    android:inputType="date" />
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -53,12 +82,18 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Image:"
+                    android:textSize="15sp"/>
 
                 <ImageView
                     android:id="@+id/image_view"
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="5dp"
+                    android:background="@color/LightGray"/>
 
                 <Button
                     android:id="@+id/button_choose_image"
@@ -93,7 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:text="Show Uploads"
+                    android:text="Enter Freezer"
                     android:textSize="16sp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginEnd="10dp"/>

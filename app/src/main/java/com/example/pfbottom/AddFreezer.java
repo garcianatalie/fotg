@@ -33,14 +33,15 @@ public class AddFreezer extends AppCompatActivity {
 
 
     private static final int PICK_IMAGE_REQUEST = 1;
-    private EditText edit_name;
-    private EditText edit_quantity;
     private Button mButtonChooseImage;
     private Button mButtonUpload;
     private TextView mTextViewShowUploads;
     private EditText mEditTextFileName;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
+    //added
+    private EditText edit_quantity, edit_expDate;
+
 
     private Uri mImageUri;
 
@@ -61,6 +62,9 @@ public class AddFreezer extends AppCompatActivity {
         mEditTextFileName = findViewById(R.id.edit_text_file_name);
         mImageView = findViewById(R.id.image_view);
         mProgressBar = findViewById(R.id.progress_bar);
+        //added
+        edit_quantity = findViewById(R.id.edit_quantity);
+        edit_expDate = findViewById(R.id.edit_expDate);
 
         mStorageRef = FirebaseStorage.getInstance().getReference("freezer");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("freezer");
@@ -141,14 +145,33 @@ public class AddFreezer extends AppCompatActivity {
                             mDatabaseRef.child(uploadId).setValue(upload);
                             */
                             Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
-                            while (!urlTask.isSuccessful());
+                            while (!urlTask.isSuccessful()) ;
                             Uri downloadUrl = urlTask.getResult();
 
                             //Log.d(TAG, "onSuccess: firebase download url: " + downloadUrl.toString()); //use if testing...don't need this line.
-                            Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),downloadUrl.toString());
+                            /*Upload upload = new Upload(mEditTextFileName.getText().toString().trim(), downloadUrl.toString());
+                            //added
+                            Upload upload1 = new Upload(edit_quantity.getText().toString().trim(), downloadUrl.toString());
+                            Upload upload2 = new Upload(edit_expDate.getText().toString().trim(), downloadUrl.toString());
 
                             String uploadId = mDatabaseRef.push().getKey();
                             mDatabaseRef.child(uploadId).setValue(upload);
+
+
+                             */
+                            String mName = mEditTextFileName.getText().toString().trim();
+                            String quantity = edit_quantity.getText().toString().trim();
+                            String exp = edit_expDate.getText().toString().trim();
+
+
+                            Upload upload = new Upload(mName, quantity, exp, downloadUrl.toString());
+
+
+                            String uploadId = mDatabaseRef.push().getKey();
+                            mDatabaseRef.child(uploadId).setValue(upload);
+                            //added
+                           // mDatabaseRef.child(uploadId).setValue(upload1);
+                           // mDatabaseRef.child(uploadId).setValue(upload2);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
