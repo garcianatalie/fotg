@@ -1,10 +1,18 @@
 package com.example.pfbottom;
 
+import com.google.firebase.database.Exclude;
+
 public class Upload {
     private String mName;
     private String mImageUrl;
 
-//added
+
+
+    private String mKey;
+
+
+
+    //added
     private String quantity;
     private String exp;
 
@@ -37,15 +45,33 @@ public class Upload {
         return mImageUrl;
     }
 
+    //added
     public String getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
     public String getExp() {
         return exp;
     }
 
+    public void setExp(String exp) {
+        this.exp = exp;
+    }
+
     public void setImageUrl(String imageUrl) {
         mImageUrl = imageUrl;
+    }
+    @Exclude
+    public String getKey() {
+        return mKey;
+    }
+
+    @Exclude
+    public void setKey(String key) {
+        mKey = key;
     }
 }

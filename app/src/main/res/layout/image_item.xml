@@ -7,7 +7,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+        <ImageView
+            android:id="@+id/image_view_upload"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
         <TextView
             android:id="@+id/text_view_name"
             android:layout_width="wrap_content"
@@ -18,11 +21,30 @@
             android:text="Name"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
+        <TextView
+            android:id="@+id/text_view_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="quantity"
+            android:textColor="@android:color/black"
+            android:textSize="10sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/text_view_exp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="expiration"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
 
-        <ImageView
-            android:id="@+id/image_view_upload"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

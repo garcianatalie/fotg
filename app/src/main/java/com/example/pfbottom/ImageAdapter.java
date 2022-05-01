@@ -1,7 +1,10 @@
 package com.example.pfbottom;
 
 import android.content.Context;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -16,6 +19,8 @@ import java.util.List;
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
     private Context mContext;
     private List<Upload> mUploads;
+    //added
+    private OnItemClickListener mListener;
 
     public ImageAdapter(Context context, List<Upload> uploads) {
         mContext = context;
@@ -32,6 +37,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public void onBindViewHolder(ImageViewHolder holder, int position) {
         Upload uploadCurrent = mUploads.get(position);
         holder.textViewName.setText(uploadCurrent.getName());
+        //added
+        holder.textViewQuantity.setText(uploadCurrent.getQuantity());
+        holder.textViewExp.setText(uploadCurrent.getExp());
         Picasso.get()
                 .load(uploadCurrent.getImageUrl())
                .placeholder(R.mipmap.ic_launcher)
@@ -45,15 +53,72 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         return mUploads.size();
     }
 
-    public static class ImageViewHolder extends RecyclerView.ViewHolder {
-        public TextView textViewName;
+    public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
+            View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
+        public TextView textViewName, textViewQuantity, textViewExp;
         public ImageView imageView;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
 
             textViewName = itemView.findViewById(R.id.text_view_name);
+            textViewQuantity = itemView.findViewById(R.id.text_view_quantity);
+            textViewExp = itemView.findViewById(R.id.text_view_exp);
             imageView = itemView.findViewById(R.id.image_view_upload);
+
+            //added
+            itemView.setOnClickListener(this);
+            itemView.setOnCreateContextMenuListener(this);
         }
+        @Override
+        public void onClick(View v) {
+            if (mListener != null) {
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    mListener.onItemClick(position);
+                }
+            }
+        }
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+            menu.setHeaderTitle("Select Action");
+           // MenuItem doWhatever = menu.add(Menu.NONE, 1, 1, "Do whatever");
+            MenuItem delete = menu.add(Menu.NONE, 1, 1, "Delete");
+
+           // doWhatever.setOnMenuItemClickListener(this);
+            delete.setOnMenuItemClickListener(this);
+        }
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+            if (mListener != null) {
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+
+                    switch (item.getItemId()) {
+                      /*  case 1:
+                            mListener.onWhatEverClick(position);
+                            return true;
+
+                       */
+                        case 1:
+                            mListener.onDeleteClick(position);
+                            return true;
+                    }
+                }
+            }
+            return false;
+        }
+    }
+
+public interface OnItemClickListener {
+    void onItemClick(int position);
+
+    //void onWhatEverClick(int position);
+
+    void onDeleteClick(int position);
+}
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
     }
 }
