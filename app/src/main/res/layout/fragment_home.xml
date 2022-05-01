@@ -32,13 +32,13 @@
                android:layout_height="match_parent"
                android:gravity="top|center_horizontal"
                android:layout_weight="1">
+
                <Button
                    android:id="@+id/btnEnterFreezer"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:backgroundTint="@color/black"
                    android:text="@string/enter_txt"
-                   android:onClick="sendMessage"
                    tools:ignore="DuplicateSpeakableTextCheck" />
            </LinearLayout>
 

@@ -11,25 +11,25 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Fridge extends AppCompatActivity {
+public class AddFridge extends AppCompatActivity {
 
     // initiate
     EditText edit_name;
     EditText edit_quantity;
-    Button btnEnter;
+    Button btn_submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge);
 
-        //
+
         edit_name = findViewById(R.id.edit_name);
         edit_quantity = findViewById(R.id.edit_quantity);
-        btnEnter = findViewById(R.id.btnEnter);
+        btn_submit = findViewById(R.id.btn_submit);
 
         // button event handler on click
-        btnEnter.setOnClickListener(new View.OnClickListener() {
+        btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -50,6 +50,6 @@ public class Fridge extends AppCompatActivity {
         itemDbRef.push().setValue(item);
 
         //message if worked
-        Toast.makeText(Fridge.this,"Item entered!",Toast.LENGTH_SHORT).show();
+        Toast.makeText(AddFridge.this,"Item entered!",Toast.LENGTH_SHORT).show();
     }
 }
