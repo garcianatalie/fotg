@@ -1,5 +1,7 @@
 package com.example.pfbottom;
 
+import android.util.SparseIntArray;
+
 import com.google.firebase.database.Exclude;
 
 public class Upload {
@@ -14,7 +16,7 @@ public class Upload {
 
     //added
     private String quantity;
-    private String exp;
+     String exp;
 
     public Upload() {
         //empty constructor needed
@@ -74,4 +76,6 @@ public class Upload {
     public void setKey(String key) {
         mKey = key;
     }
+
+
 }

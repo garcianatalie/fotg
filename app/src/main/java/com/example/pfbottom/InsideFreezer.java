@@ -21,6 +21,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class InsideFreezer extends AppCompatActivity implements ImageAdapter.OnItemClickListener {
@@ -48,6 +50,14 @@ public class InsideFreezer extends AppCompatActivity implements ImageAdapter.OnI
         mProgressCircle = findViewById(R.id.progress_circle);
 
         mUploads = new ArrayList<>();
+
+        //attempt to sort
+        Collections.sort(mUploads,new Comparator<Upload>(){
+            @Override
+            public int compare(Upload o1, Upload o2) {
+                return Integer.parseInt(o1.exp) - Integer.parseInt(o2.exp);
+            }
+        });
 
         mAdapter = new ImageAdapter(InsideFreezer.this, mUploads);
 

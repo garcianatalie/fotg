@@ -22,16 +22,40 @@
             android:textColor="@android:color/black"
             android:textSize="20sp" />
         <TextView
+            android:id="@+id/Qtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Quantity:"
+            android:textStyle="italic"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:layout_weight="1"/>
+
+        <TextView
             android:id="@+id/text_view_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
             android:text="quantity"
             android:textColor="@android:color/black"
-            android:textSize="10sp"
-            android:layout_weight="1"/>
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/Etext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Expiration Date:"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:textStyle="italic"/>
+
         <TextView
             android:id="@+id/text_view_exp"
             android:layout_width="wrap_content"
@@ -40,9 +64,10 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
             android:layout_weight="1"
+            android:textStyle="bold"
             android:text="expiration"
             android:textColor="@android:color/black"
-            android:textSize="10sp" />
+            android:textSize="15sp" />
 
 
 

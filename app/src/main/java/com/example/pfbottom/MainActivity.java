@@ -43,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.info:
                             fragment = new InfoFragment();
                             break;
-                        case R.id.more:
+                       /* case R.id.more:
                             fragment = new MoreFragment();
                             break;
+
+                        */
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
 
